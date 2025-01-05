@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dockerizemeapi-service
+spec:
+  selector:
+    app: dockerizemeapi
+  ports:
+    - protocol: TCP
+      port: 80 # The port the Service exposes
+      targetPort: 8080 # The container port the Service routes to
+  type: NodePort # Exposes the Service on a NodePort

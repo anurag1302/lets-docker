@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerizemeapi-deployment
+  labels:
+    app: dockerizemeapi
+spec:
+  replicas: 3 # Number of pods to run
+  selector:
+    matchLabels:
+      app: dockerizemeapi
+  template:
+    metadata:
+      labels:
+        app: dockerizemeapi
+    spec:
+      containers:
+        - name: dockerizemeapi
+          image: anuragsinha1302/dockerizemeapi:v5 # Replace with your Docker Hub image
+          ports:
+            - containerPort: 8080 # The port your app listens on
