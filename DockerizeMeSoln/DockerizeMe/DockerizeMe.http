@@ -1,0 +1,6 @@
+@DockerizeMe_HostAddress = http://localhost:5284
+
+GET {{DockerizeMe_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
